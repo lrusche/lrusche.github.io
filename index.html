@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CATT Codex training</title>
+    <title>BIO611 Feedback Tool</title>
     <style>
       body {
         background-color: lightblue;
@@ -11,7 +11,69 @@
     </style>
   </head>
   <body>
-    <h1>CATT Codex training</h1>
-    <p>This is the text.</p>
+    <h1>BIO611 Feedback Tool</h1>
+    <main>
+      <section aria-labelledby="assignment-selection">
+        <h2 id="assignment-selection">Assignment selection</h2>
+        <label for="assignment">
+          Which assignment are you working on?
+        </label>
+        <select id="assignment" name="assignment">
+          <option value="" selected>Select an assignment</option>
+          <option value="paper-1">Paper 1: Mini Research Paper</option>
+          <option value="paper-2">Paper 2: Research Proposal</option>
+        </select>
+      </section>
+
+      <section aria-labelledby="draft-selection">
+        <h2 id="draft-selection">Draft or section selection</h2>
+        <label for="draft-section">
+          Are you submitting the complete document or just one section?
+        </label>
+        <p>
+          If you are submitting the complete document, upload the file below.
+          If you are submitting just one section, choose which section here.
+        </p>
+        <select id="draft-section" name="draft-section">
+          <option value="" selected>Select a draft or section</option>
+          <option value="complete-document">Complete document</option>
+          <optgroup label="Research Paper sections">
+            <option value="abstract">Abstract</option>
+            <option value="introduction">Introduction</option>
+            <option value="methods">Methods</option>
+            <option value="results">Results</option>
+            <option value="discussion">Discussion</option>
+          </optgroup>
+          <optgroup label="Research Proposal sections">
+            <option value="proposal-aims">Aims page</option>
+            <option value="proposal-significance">Significance</option>
+            <option value="proposal-innovation">Innovation</option>
+            <option value="proposal-approach">Approach</option>
+          </optgroup>
+        </select>
+      </section>
+
+      <section aria-labelledby="upload-area">
+        <h2 id="upload-area">Student upload area</h2>
+        <p>Upload your draft so the tool can generate targeted feedback.</p>
+        <label for="student-upload">Upload your draft (PDF or DOCX)</label>
+        <input id="student-upload" name="student-upload" type="file" />
+      </section>
+
+      <section aria-labelledby="instructor-upload-area">
+        <h2 id="instructor-upload-area">Instructor upload area</h2>
+        <p>Provide assignment-specific guidance for students.</p>
+        <label for="instructor-upload">Upload rubric, prompt, or examples</label>
+        <input id="instructor-upload" name="instructor-upload" type="file" />
+      </section>
+
+      <section aria-labelledby="feedback-display">
+        <h2 id="feedback-display">Feedback display</h2>
+        <p>Your feedback will appear here after processing.</p>
+        <div role="status" aria-live="polite">
+          No feedback yet. Upload a draft to begin.
+        </div>
+      </section>
+    </main>
   </body>
 </html>
